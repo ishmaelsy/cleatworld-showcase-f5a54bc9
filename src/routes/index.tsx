@@ -17,8 +17,8 @@ export const Route = createFileRoute("/")({
 });
 
 // TODO: replace with the real Cleatworldgh WhatsApp number and Instagram handle.
-const WHATSAPP_NUMBER = "233000000000"; // international format, no + or spaces
-const WHATSAPP_DISPLAY = "+233 00 000 0000";
+const WHATSAPP_NUMBER = "233549778519"; // international format, no + or spaces
+const WHATSAPP_DISPLAY = "+233 54 977 8519";
 const INSTAGRAM_HANDLE = "cleatworldgh";
 const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Dansoman+Roundabout+Accra";
