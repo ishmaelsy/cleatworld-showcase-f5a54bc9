@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Cleatworld" },
+      { name: "description", content: "Cleat World Gh demo site. Jerseys, cleats and more" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Cleatworld" },
+      { property: "og:description", content: "Cleat World Gh demo site. Jerseys, cleats and more" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Cleatworld" },
+      { name: "twitter:description", content: "Cleat World Gh demo site. Jerseys, cleats and more" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01839fcb-fee7-455a-9d42-8a93ddb00b6e/id-preview-f1f16d6c--929c92e9-8488-4a80-a2b6-b9d77089f168.lovable.app-1778395541875.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01839fcb-fee7-455a-9d42-8a93ddb00b6e/id-preview-f1f16d6c--929c92e9-8488-4a80-a2b6-b9d77089f168.lovable.app-1778395541875.png" },
     ],
     links: [
       {
