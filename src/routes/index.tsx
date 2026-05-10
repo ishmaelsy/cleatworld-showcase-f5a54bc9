@@ -193,7 +193,12 @@ function Index() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90 transition">
+            <a
+              href={waLink("Hi Cleatworldgh! I'd like a quote for custom team kits.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90 transition"
+            >
               Request a quote <ArrowRight className="size-4" />
             </a>
           </div>
