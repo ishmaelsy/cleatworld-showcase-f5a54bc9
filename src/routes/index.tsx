@@ -50,7 +50,12 @@ function Index() {
             <a href="#visit" className="hover:text-foreground transition">Visit</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </nav>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition">
+          <a
+            href={waLink("Hi Cleatworldgh! I'd like to place an order.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition"
+          >
             <ShoppingBag className="size-4" /> Order
           </a>
         </div>
