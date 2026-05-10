@@ -16,6 +16,16 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+// TODO: replace with the real Cleatworldgh WhatsApp number and Instagram handle.
+const WHATSAPP_NUMBER = "233000000000"; // international format, no + or spaces
+const WHATSAPP_DISPLAY = "+233 00 000 0000";
+const INSTAGRAM_HANDLE = "cleatworldgh";
+const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Dansoman+Roundabout+Accra";
+
+const waLink = (msg: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
 const products = [
   { name: "Soccer Cleats", tag: "Pro grade", img: heroCleats, desc: "FG, AG and turf cleats from elite brands." },
   { name: "Soccer Jerseys", tag: "Stock & custom", img: jersey, desc: "Club and national team jerseys in stock — plus custom prints for your squad." },
