@@ -225,34 +225,45 @@ function Index() {
             <p className="text-sm uppercase tracking-widest text-primary mb-3">Pull up</p>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-none mb-8">Find us at<br />Dansoman Roundabout.</h2>
             <div className="space-y-5">
-              <div className="flex gap-4">
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="flex gap-4 group">
                 <MapPin className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">Cleatworldgh HQ</p>
-                  <p className="text-muted-foreground text-sm">Dansoman Roundabout, Accra, Ghana</p>
+                  <p className="font-semibold group-hover:text-primary transition">Cleatworldgh HQ</p>
+                  <p className="text-muted-foreground text-sm">Dansoman Roundabout, Accra, Ghana — get directions →</p>
                 </div>
-              </div>
-              <div className="flex gap-4">
+              </a>
+              <a
+                href={waLink("Hi Cleatworldgh! I'd like to know about delivery options.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-4 group"
+              >
                 <Truck className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">We deliver</p>
+                  <p className="font-semibold group-hover:text-primary transition">We deliver</p>
                   <p className="text-muted-foreground text-sm">Same-day across Accra, nationwide via courier.</p>
                 </div>
-              </div>
-              <div id="contact" className="flex gap-4">
+              </a>
+              <a
+                id="contact"
+                href={waLink("Hi Cleatworldgh!")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-4 group"
+              >
                 <Phone className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">WhatsApp orders</p>
-                  <a href="https://wa.me/233000000000" className="text-muted-foreground text-sm hover:text-primary">+233 00 000 0000</a>
+                  <p className="font-semibold group-hover:text-primary transition">WhatsApp orders</p>
+                  <p className="text-muted-foreground text-sm">{WHATSAPP_DISPLAY}</p>
                 </div>
-              </div>
-              <div className="flex gap-4">
+              </a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex gap-4 group">
                 <Instagram className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">Follow the drops</p>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-primary">@cleatworldgh</a>
+                  <p className="font-semibold group-hover:text-primary transition">Follow the drops</p>
+                  <p className="text-muted-foreground text-sm">@{INSTAGRAM_HANDLE}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-border bg-card aspect-square lg:aspect-auto min-h-[400px]">
