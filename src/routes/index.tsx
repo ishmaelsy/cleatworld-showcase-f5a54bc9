@@ -16,6 +16,16 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+// TODO: replace with the real Cleatworldgh WhatsApp number and Instagram handle.
+const WHATSAPP_NUMBER = "233000000000"; // international format, no + or spaces
+const WHATSAPP_DISPLAY = "+233 00 000 0000";
+const INSTAGRAM_HANDLE = "cleatworldgh";
+const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Dansoman+Roundabout+Accra";
+
+const waLink = (msg: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
 const products = [
   { name: "Soccer Cleats", tag: "Pro grade", img: heroCleats, desc: "FG, AG and turf cleats from elite brands." },
   { name: "Soccer Jerseys", tag: "Stock & custom", img: jersey, desc: "Club and national team jerseys in stock — plus custom prints for your squad." },
@@ -40,7 +50,12 @@ function Index() {
             <a href="#visit" className="hover:text-foreground transition">Visit</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
           </nav>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition">
+          <a
+            href={waLink("Hi Cleatworldgh! I'd like to place an order.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition"
+          >
             <ShoppingBag className="size-4" /> Order
           </a>
         </div>
@@ -128,9 +143,13 @@ function Index() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((p, i) => (
-            <article
+            <a
               key={p.name}
-              className={`group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/60 transition shadow-card ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
+              href={waLink(`Hi Cleatworldgh! I'm interested in ${p.name}. Could you share what's available?`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Enquire about ${p.name} on WhatsApp`}
+              className={`group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/60 transition shadow-card block ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
             >
               <div className={`overflow-hidden ${i === 0 ? "aspect-[16/10]" : "aspect-square"}`}>
                 <img
@@ -149,8 +168,9 @@ function Index() {
                   <ArrowRight className="size-5 text-primary group-hover:translate-x-1 transition" />
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">{p.desc}</p>
+                <p className="text-xs uppercase tracking-widest text-primary mt-4">Enquire on WhatsApp →</p>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>
@@ -173,7 +193,12 @@ function Index() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90 transition">
+            <a
+              href={waLink("Hi Cleatworldgh! I'd like a quote for custom team kits.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90 transition"
+            >
               Request a quote <ArrowRight className="size-4" />
             </a>
           </div>
@@ -200,34 +225,45 @@ function Index() {
             <p className="text-sm uppercase tracking-widest text-primary mb-3">Pull up</p>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-none mb-8">Find us at<br />Dansoman Roundabout.</h2>
             <div className="space-y-5">
-              <div className="flex gap-4">
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="flex gap-4 group">
                 <MapPin className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">Cleatworldgh HQ</p>
-                  <p className="text-muted-foreground text-sm">Dansoman Roundabout, Accra, Ghana</p>
+                  <p className="font-semibold group-hover:text-primary transition">Cleatworldgh HQ</p>
+                  <p className="text-muted-foreground text-sm">Dansoman Roundabout, Accra, Ghana — get directions →</p>
                 </div>
-              </div>
-              <div className="flex gap-4">
+              </a>
+              <a
+                href={waLink("Hi Cleatworldgh! I'd like to know about delivery options.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-4 group"
+              >
                 <Truck className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">We deliver</p>
+                  <p className="font-semibold group-hover:text-primary transition">We deliver</p>
                   <p className="text-muted-foreground text-sm">Same-day across Accra, nationwide via courier.</p>
                 </div>
-              </div>
-              <div id="contact" className="flex gap-4">
+              </a>
+              <a
+                id="contact"
+                href={waLink("Hi Cleatworldgh!")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-4 group"
+              >
                 <Phone className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">WhatsApp orders</p>
-                  <a href="https://wa.me/233000000000" className="text-muted-foreground text-sm hover:text-primary">+233 00 000 0000</a>
+                  <p className="font-semibold group-hover:text-primary transition">WhatsApp orders</p>
+                  <p className="text-muted-foreground text-sm">{WHATSAPP_DISPLAY}</p>
                 </div>
-              </div>
-              <div className="flex gap-4">
+              </a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex gap-4 group">
                 <Instagram className="size-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold">Follow the drops</p>
-                  <a href="#" className="text-muted-foreground text-sm hover:text-primary">@cleatworldgh</a>
+                  <p className="font-semibold group-hover:text-primary transition">Follow the drops</p>
+                  <p className="text-muted-foreground text-sm">@{INSTAGRAM_HANDLE}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden border border-border bg-card aspect-square lg:aspect-auto min-h-[400px]">
