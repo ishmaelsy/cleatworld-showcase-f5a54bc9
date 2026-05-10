@@ -143,9 +143,13 @@ function Index() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((p, i) => (
-            <article
+            <a
               key={p.name}
-              className={`group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/60 transition shadow-card ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
+              href={waLink(`Hi Cleatworldgh! I'm interested in ${p.name}. Could you share what's available?`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Enquire about ${p.name} on WhatsApp`}
+              className={`group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/60 transition shadow-card block ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
             >
               <div className={`overflow-hidden ${i === 0 ? "aspect-[16/10]" : "aspect-square"}`}>
                 <img
@@ -164,8 +168,9 @@ function Index() {
                   <ArrowRight className="size-5 text-primary group-hover:translate-x-1 transition" />
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">{p.desc}</p>
+                <p className="text-xs uppercase tracking-widest text-primary mt-4">Enquire on WhatsApp →</p>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>
