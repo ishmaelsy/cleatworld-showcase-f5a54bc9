@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 
 const products = [
   { name: "Soccer Cleats", tag: "Pro grade", img: heroCleats, desc: "FG, AG and turf cleats from elite brands." },
-  { name: "Custom Jerseys", tag: "Team kits", img: jersey, desc: "Names, numbers, crests — printed for your squad." },
+  { name: "Soccer Jerseys", tag: "Stock & custom", img: jersey, desc: "Club and national team jerseys in stock — plus custom prints for your squad." },
   { name: "Snapbacks & Hats", tag: "Streetwear", img: cap, desc: "Caps, beanies and bucket hats." },
   { name: "Roller Skates", tag: "Glide", img: skates, desc: "Quad and inline skates for cruising." },
   { name: "Board Games", tag: "Indoor", img: boardgame, desc: "Chess, draughts, scrabble and more." },
